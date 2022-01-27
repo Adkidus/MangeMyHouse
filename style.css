@@ -10,10 +10,6 @@ button:focus {
     outline: none;
 }
 
-h1{
-    margin-bottom: 32px;
-}
-
 label {
   display: block;
   margin-bottom: 12px;
@@ -76,7 +72,7 @@ input[type=text],input[type=number]{
 }
 
 .flex-sb:last-child{
-  margin-bottom: 0px; !important
+  margin-bottom: 0px;
 }
 
 .device-name{
@@ -93,6 +89,24 @@ input[type=text],input[type=number]{
   font-weight: 500;
   border-radius: 8px;
   color: white;
+}
+
+.delete-device{
+    font-size: 14px;
+    padding: 8px 0px 8px 12px;
+    border-radius: 8px;
+    text-decoration: underline;
+    color:#bd3131;
+    font-weight: 500;
+}
+
+.refresh{
+    font-size: 14px;
+    padding: 8px 0px 8px 12px;
+    border-radius: 8px;
+    text-decoration: underline;
+    color: rgb(17, 16, 17);
+    font-weight: 500;
 }
 
 .device-on{
@@ -158,11 +172,17 @@ span{
   background-color: #31AA53;
 }
 
-.flex-btn{
+.flex{
   display: flex;
-  margin: -4px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px -4px 32px -4px;
 }
-.flex-btn .btn{
+
+.flex *{
   margin: 4px;
-  flex: 1;
+}
+
+.flex .btn{
+    flex: 1;
 }

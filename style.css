@@ -10,11 +10,16 @@ button:focus {
     outline: none;
 }
 
+h1{
+    margin-bottom: 32px;
+}
+
 label {
   display: block;
   margin-bottom: 12px;
   font-size: 14px;
-  color: black;
+  color: rgb(17, 16, 17);
+  font-weight: 700;
 }
 
 input[type=text],input[type=number]{
@@ -24,7 +29,7 @@ input[type=text],input[type=number]{
   border: 1px solid #E3E3E3; 
   padding: 16px 12px;
   font-size: 16px;
-  color: black;
+  color: rgb(17, 16, 17);
 }
 
 .info{
@@ -32,6 +37,7 @@ input[type=text],input[type=number]{
   font-size: 12px;
   margin-bottom: 24px;
   color: #ED4848;
+  font-weight: 500;
 }
 
 ::placeholder{
@@ -107,6 +113,14 @@ span{
   padding: 12px;
   border-radius: 8px;
   background-color: #E1E1E1;
+  border: 1px transparent;
+  transition: all 0.2s ease;
+}
+
+.icon:hover{
+    background-color: #cacaca;
+    border: 1px solid #adadad;
+    padding: 10px;
 }
 
 .btn{
@@ -132,7 +146,7 @@ span{
 }
 
 .btn-danger:hover{
-  background-color: #E81717;
+  background-color: #bd3131;
 }
 
 .btn-success{

@@ -54,9 +54,13 @@ input[type=text],input[type=number]{
   margin-bottom: 12px;
 }
 
+
+.device-stats-name {
+  font-size: 14px;
+}
+
 .device-stats-name:before {
   content: ' - ';
-  font-size: 14px;
 }
 
 .device-stats{
@@ -100,7 +104,6 @@ input[type=text],input[type=number]{
 
 .delete-device{
     font-size: 14px;
-    padding: 8px 0px 8px 12px;
     border-radius: 8px;
     text-decoration: underline;
     color:#bd3131;
@@ -109,7 +112,6 @@ input[type=text],input[type=number]{
 
 .refresh{
     font-size: 14px;
-    padding: 8px 0px 8px 12px;
     border-radius: 8px;
     text-decoration: underline;
     color: rgb(17, 16, 17);
@@ -181,6 +183,7 @@ span{
 
 .flex{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin: 0px -4px 32px -4px;

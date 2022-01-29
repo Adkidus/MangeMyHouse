@@ -54,10 +54,17 @@ input[type=text],input[type=number]{
   margin-bottom: 12px;
 }
 
-.device-temp{
-  background-color: #E1E1E1;
+.device-stats-name:before {
+  content: ' - ';
+  font-size: 14px;
+}
+
+.device-stats{
+  background-color: #1d1c1c;
+  color: rgb(255, 255, 255);
   padding: 8px 12px;
   border-radius: 8px;
+  font-weight: 500;
 }
 
 .flex-sb{

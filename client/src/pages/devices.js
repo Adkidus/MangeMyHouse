@@ -3,8 +3,16 @@ import DevicesListItem from '../components/devicesListItem';
 
 const devicesList = [
     {
-        name: 'Gabinet Roleta',
+        name: 'Roleta Gabinet',
         apiUrl: 'https://svr51.supla.org/direct/622/HZZuSnkW3c4EhKot/read?format=json'
+    },
+    {
+        name: 'Sterownik Pompy',
+        apiUrl: 'https://svr3.supla.org/direct/1428/bB4a486kebkFymRc/read?format=json'
+    },
+    {
+        name: 'Temperatura w kominie',
+        apiUrl: 'https://svr51.supla.org/direct/623/UKZSktvHJo/read?format=json'
     }
 ]
 

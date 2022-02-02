@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import LastUpdate from '../components/lastUpdate';
 
 const ItemTemperature = ({device}) => {
+    const [lastUpdate, setLastUpdate] = useState(new Date().toLocaleString());
     const [deviceInfo, setDeviceInfo] = useState({
         connected: false,
         temperature: 0
@@ -18,6 +20,7 @@ const ItemTemperature = ({device}) => {
         axios.get('https://menagemyhome.sukces24.usermd.net/proxy/proxy.php?apiUrl='+device.apiUrl)
         .then(res => {
             setDeviceInfo(res.data)
+            setLastUpdate(new Date().toLocaleString())
         })
         .catch(e => {
             console.log(e)
@@ -51,6 +54,7 @@ const ItemTemperature = ({device}) => {
                 </div>
             </div>
         </div>
+        <LastUpdate lastUpdateDate={lastUpdate} />
     </div>;
 }
 

@@ -28,6 +28,10 @@ input[type=text],input[type=number]{
   color: rgb(17, 16, 17);
 }
 
+a {
+  text-decoration: none;
+}
+
 .info{
   margin-top: -20px;
   font-size: 12px;
@@ -153,6 +157,8 @@ span{
   font-size: 16px;
   text-align: center;
   border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-block{
@@ -192,4 +198,8 @@ span{
 
 .flex .btn{
     flex: 1;
+}
+
+.w-100{
+  width: 100%;
 }

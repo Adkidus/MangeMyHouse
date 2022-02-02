@@ -2,11 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/index.css';
 import Devices from './pages/devices';
+import NewDevice from './pages/newDevice';
 import reportWebVitals from './reportWebVitals';
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
-    <Devices />
+    <Router>
+      <Routes>
+        <Route path='/new' element={<NewDevice />} />
+        <Route path='/' element={<Devices />} />
+      </Routes>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

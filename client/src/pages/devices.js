@@ -2,6 +2,7 @@ import React from "react";
 import ItemPercent from "../components/itemPercent";
 import ItemTemperature from '../components/itemTemperature';
 import ItemStatus from '../components/itemStatus';
+import { Link } from "react-router-dom";
 
 const devicesList = [
     {
@@ -46,7 +47,9 @@ const Devices = () => {
                         break;
                 }
             })}
-            {/* <a href="device.html" className="btn btn-success btn-block">Dodaj nowe urządzenie</a> */}
+            <Link to='/new'>
+                <button className='btn btn-success btn-block w-100'>Dodaj nowe urządzenie</button>
+            </Link>
         </div>
         </section>
         }

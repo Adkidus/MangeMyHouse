@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 
-
-
 const DeviceForm = ({deviceData}) => {
     let navigate = useNavigate();
     const [device, setDevice] = useState({
@@ -33,7 +31,6 @@ const DeviceForm = ({deviceData}) => {
             setDevice(deviceData)
     },[deviceData]);
     
-
     return <form>
         <label>Nazwa urządzenia (max 15 znaków)</label>
         <input 

@@ -18,7 +18,7 @@ label {
   font-weight: 700;
 }
 
-input[type=text],input[type=number]{
+input{
   width: 100%;
   margin-bottom: 24px;
   border-radius: 8px;
@@ -26,6 +26,15 @@ input[type=text],input[type=number]{
   padding: 16px 12px;
   font-size: 16px;
   color: rgb(17, 16, 17);
+}
+
+input.danger{
+  border: 2px solid #ED4848; 
+  background-color: #FFF5F5;
+}
+
+a {
+  text-decoration: none;
 }
 
 .info{
@@ -57,10 +66,7 @@ input[type=text],input[type=number]{
 
 .device-stats-name {
   font-size: 14px;
-}
-
-.device-stats-name:before {
-  content: ' - ';
+  margin-left: .5rem;
 }
 
 .device-stats{
@@ -156,6 +162,8 @@ span{
   font-size: 16px;
   text-align: center;
   border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-block{
@@ -195,4 +203,8 @@ span{
 
 .flex .btn{
     flex: 1;
+}
+
+.w-100{
+  width: 100%;
 }

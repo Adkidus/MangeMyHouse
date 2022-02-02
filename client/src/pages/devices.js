@@ -22,7 +22,6 @@ const devicesList = [
     },
 ]
 
-
 const Devices = () => {
 
     return <section>

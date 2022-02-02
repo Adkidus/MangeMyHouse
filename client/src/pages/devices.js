@@ -28,22 +28,18 @@ const Devices = () => {
         <div className="container">
             <div className="flex">
                 <h1>Twoje urządzenia</h1> 
-                {/* <a href=""><span className="refresh">Odśwież</span></a> */}
+                {/* <span className="refresh">Odśwież Listę</span> */}
             </div>
             {devicesList.map((device,index) => {
                 switch (device.type) {
                     case 1:
                         return <ItemPercent key={index} device={device} />
-                        break;
                     case 2:
                         return <ItemTemperature key={index} device={device} />
-                        break;
                     case 3:
                         return <ItemStatus key={index} device={device} />
-                        break;
                     default:
                         return <div key={index}>BRAK DANYCH {device.name}</div>
-                        break;
                 }
             })}
             <Link to='/new'>

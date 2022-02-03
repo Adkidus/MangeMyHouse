@@ -2,6 +2,7 @@ require('dotenv').config()
 
 const express = require('express');
 const connectDB = require('./config/db');
+const path = require('path');
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/devices', require('./routes/devices'));
+app.use('/api/devices', require('./routes/devices'));
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client'));

@@ -114,6 +114,7 @@ a {
     text-decoration: underline;
     color:#bd3131;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .refresh{

@@ -40,4 +40,13 @@ router.post('/update', async(req, res) => {
     }
 })
 
+router.delete('/:id', async(req, res) => {
+    try {
+        await Device.deleteOne({_id:req.params.id});
+        res.status(200).json({ success: req.params.id })
+    } catch (e) {
+        res.status(500).json({Error: e.message});
+    }
+})
+
 module.exports = router;

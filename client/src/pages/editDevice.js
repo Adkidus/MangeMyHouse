@@ -17,11 +17,22 @@ const EditDevice = () => {
             navigate("/", { replace: true });
          })
     },[])
+    const deleteDevice = () => {
+        if (confirm("Czy napewno chcesz usunąć?") == true) {
+            axiosConfig.delete(`devices/${params.deviceID}`)
+            .then(res => {
+                setDevice(res.data)
+            })
+            .catch(e => {
+                alert(e)
+            })
+        }
+    }
     return <section>
         {device ? <div className="container"> 
             <div className="flex">
                 <h1>Edytuj urządzenie</h1>
-                <span className="delete-device">Usuń to urządzenie</span>
+                <span className="delete-device" onClick={deleteDevice}>Usuń to urządzenie</span>
             </div>
             <DeviceForm deviceData={device} />
         </div> : ''}

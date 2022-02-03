@@ -13,7 +13,7 @@ button:focus {
 label {
   display: block;
   margin-bottom: 12px;
-  font-size: 14px;
+  font-size: 16px;
   color: rgb(17, 16, 17);
   font-weight: 700;
 }
@@ -54,6 +54,10 @@ a {
   width: 480px;
   max-width: 90%;
   margin: 0 auto;
+}
+
+.content{
+  margin-top: 64px;
 }
 
 .device{
@@ -167,6 +171,11 @@ span{
   cursor: pointer;
 }
 
+.btn-small{
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
 .btn-block{
   display: block;
   text-align: center;
@@ -190,12 +199,27 @@ span{
   background-color: #31AA53;
 }
 
+.btn-info{
+  transition: all 0.3s ease;
+  background-color: #b4b4b4;
+
+  margin: 8px 0px 24px 0px;
+}
+
+.btn-info:hover{
+  background-color: #929292;
+  padding: 8px 12px;
+  font-size: 14px;
+  margin: 8px 0px 24px 0px;
+}
+
 .flex{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  align-content: stretch;
   justify-content: space-between;
-  margin: 0px -4px 32px -4px;
+  margin: 0px -4px 0px -4px;
 }
 
 .flex *{

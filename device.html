@@ -11,33 +11,45 @@
     <section>
         <div class="container"> 
             <div class="flex"><h1>Dodaj urządzenie</h1><a href=""><span class="delete-device">Usuń to urządzenie</span></a></div>
-            <label for="mail">Nazwa urządzenia (max 15 znaków)</label>
-            <input type="text" id="mail" name="user_email" placeholder="np. Rolety - salon">
+            <div class="content">
+                <label for="mail">Nazwa urządzenia (max 15 znaków)</label>
+                <input type="text" id="mail" name="user_email" placeholder="np. Rolety - salon">
 
-            <label for="mail">Link do JSON</label>
-            <input type="text" id="mail" name="user_email" placeholder="link do JSON">
+                <label for="mail">Link do JSON</label>
+                <input type="text" id="mail" name="user_email" placeholder="link do JSON">
 
-            <label for="mail">Treść SMS gdy urządzenie się włączy</label>
-            <input type="text" id="mail" name="user_email" placeholder="np. Urządzenie zostało włączone">
+                <label for="mail">Treść SMS gdy urządzenie się włączy</label>
+                <input type="text" id="mail" name="user_email" placeholder="np. Urządzenie zostało włączone">
 
-            <label for="mail">Treść SMS gdy urządzenie się wyłączy</label>
-            <input type="text" id="mail" name="user_email" placeholder="np. Urządzenie zostało wyłączone" style="border: 2px solid #ED4848; background-color: #FFF5F5;">
-            <div class="info">Pole nie może być puste</div>
-            
-            <label for="mail">Numery na jakie zostanie wysłany SMS</label>
-            <input type="number" id="mail" name="user_email" placeholder="np. 534735670">
-            
-            <label for="cars">Wybierz typ urządzenia</label>
-            <select id="cars" name="cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="fiat">Fiat</option>
-                <option value="audi">Audi</option>
-            </select>
+                <label for="mail">Treść SMS gdy urządzenie się wyłączy</label>
+                <input type="text" id="mail" name="user_email" placeholder="np. Urządzenie zostało wyłączone" style="border: 2px solid #ED4848; background-color: #FFF5F5;">
+                <div class="info">Pole nie może być puste</div>
+                
+                <label for="mail">Numery na jakie zostanie wysłany SMS</label>
+                <div class="flex">
+                    <input type="number" id="mail" name="user_email" style="flex: 1;" placeholder="np. 534735670">
+                    <a href="index.html" class="btn btn-danger" style="flex: 0 1 64px;">x</a>
+                </div>
+                <div class="flex">
+                    <input type="number" id="mail" name="user_email" style="flex: 1;" placeholder="np. 534735670">
+                    <a href="index.html" class="btn btn-danger" style="flex: 0 1 64px;">x</a>
+                </div>
 
-            <div class="flex">
-                <a href="index.html" class="btn btn-danger">Cofnij</a>
-                <a href="index.html" class="btn btn-success">Zatwierdź</a>
+                <a href="index.html" class="btn btn-small btn-info">Dodaj nowy numer</a>
+
+
+                <label for="cars">Wybierz typ urządzenia</label>
+                <select id="cars" name="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="fiat">Fiat</option>
+                    <option value="audi">Audi</option>
+                </select>
+
+                <div class="flex">
+                    <a href="index.html" class="btn btn-danger">Cofnij</a>
+                    <a href="index.html" class="btn btn-success">Zatwierdź</a>
+                </div>
             </div>
         </div>
     </section>

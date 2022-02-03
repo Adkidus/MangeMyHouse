@@ -18,7 +18,7 @@ const EditDevice = () => {
          })
     },[])
     const deleteDevice = () => {
-        if (confirm("Czy napewno chcesz usunąć?") == true) {
+        if (window.confirm("Czy napewno chcesz usunac?") == true) {
             axiosConfig.delete(`devices/${params.deviceID}`)
             .then(res => {
                 setDevice(res.data)

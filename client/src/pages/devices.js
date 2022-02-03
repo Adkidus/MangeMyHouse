@@ -1,29 +1,21 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import ItemPercent from "../components/itemPercent";
 import ItemTemperature from '../components/itemTemperature';
 import ItemStatus from '../components/itemStatus';
 import { Link } from "react-router-dom";
-
-const devicesList = [
-    {
-        name: 'Roleta Gabinet',
-        apiUrl: 'https://svr51.supla.org/direct/622/HZZuSnkW3c4EhKot/read?format=json',
-        type: 1
-    },
-    {
-        name: 'Temperatura w kominie',
-        apiUrl: 'https://svr3.supla.org/direct/1428/bB4a486kebkFymRc/read?format=json',
-        type: 2
-    },
-    {
-        name: 'Sterownik Pompy',
-        apiUrl: 'https://svr51.supla.org/direct/623/UKZSktvHJo/read?format=json',
-        type: 3
-    },
-]
+import axiosConfig from '../utils/axiosConfig';
 
 const Devices = () => {
-
+    const [devicesList, setDevicesList] = useState([])
+    useEffect(() => {
+        axiosConfig.get('devices/list')
+        .then(res => {
+           setDevicesList(res.data)
+        })
+        .catch(e => {
+            console.log(e)
+        })
+    },[])
     return <section>
         <div className="container">
             <div className="flex">

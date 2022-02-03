@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import LastUpdate from '../components/lastUpdate';
+import { Link } from 'react-router-dom';
 
 const ItemPercent = ({device}) => {
     const [lastUpdate, setLastUpdate] = useState(new Date().toLocaleString());
@@ -17,7 +18,7 @@ const ItemPercent = ({device}) => {
     }, [])
 
     const getDeviceDetails = () => {
-        axios.get('https://menagemyhome.sukces24.usermd.net/proxy/proxy.php?apiUrl='+device.apiUrl)
+        axios.get('https://sukces24.usermd.net/proxy/proxy.php?apiUrl='+device.apiUrl)
         .then(res => {
             setDeviceInfo(res.data)
             setLastUpdate(new Date().toLocaleString())
@@ -29,10 +30,10 @@ const ItemPercent = ({device}) => {
     return <div className="device">
         <div className="flex-sb">
             <div>
-                <span className="device-name">Rolety</span>
+                <span className="device-name">{device.name}</span>
             </div>
             <div>
-                <span className="device-status">Stan</span>
+                <span className="device-status">Stan&nbsp;</span>
                 {deviceInfo.connected ?
                     <span className="device-onof device-on">włączona</span> 
                     : <span className="device-onof device-off">wyłączona</span>
@@ -45,14 +46,14 @@ const ItemPercent = ({device}) => {
                 <span className="device-stats-name">Procent zamknięcia</span>
             </div>
             <div>
-                <div className="icon-border">
-                    <a href="device.html">
+                <Link to={`/edit/${device._id}`}>
+                    <div className="icon-border">
                         <img
                             src={require("../assets/img/edit.svg").default}                         
                             alt="" 
                             className="icon" />
-                    </a> 
-                </div>
+                    </div>
+                </Link>
             </div>
         </div>
         <LastUpdate lastUpdateDate={lastUpdate} />

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './assets/css/index.css';
 import Devices from './pages/devices';
 import NewDevice from './pages/newDevice';
+import EditDevice from './pages/editDevice';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter as Router,
@@ -13,6 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
+        <Route path='/edit/:deviceID' element={<EditDevice />} />
         <Route path='/new' element={<NewDevice />} />
         <Route path='/' element={<Devices />} />
       </Routes>

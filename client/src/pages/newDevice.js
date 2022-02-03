@@ -6,7 +6,6 @@ const NewDevice = () => {
         <div className="container"> 
             <div className="flex">
                 <h1>Dodaj urządzenie</h1>
-                {/* <a href=""><span className="delete-device">Usuń to urządzenie</span></a> */}
             </div>
             <DeviceForm />
         </div>

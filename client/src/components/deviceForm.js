@@ -1,15 +1,17 @@
+import axiosConfig from '../utils/axiosConfig';
 import React, {useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 const DeviceForm = ({deviceData}) => {
     let navigate = useNavigate();
     const [device, setDevice] = useState({
-        deviceId: 0,
+        _id: 0,
         name: '',
         apiUrl: '',
         meesageSwitchOn: '',
         meesageSwitchOff: '',
         phones: [''],
+        type: 1,
     })
 
     const handleChange = (k,v) => {
@@ -30,8 +32,25 @@ const DeviceForm = ({deviceData}) => {
         if(deviceData)
             setDevice(deviceData)
     },[deviceData]);
+
+    const saveForm = e => {
+        e.preventDefault();
+        let dataToSave = {...device}
+        let postUrl = 'update'
+        if(device._id === 0){
+            postUrl = 'new';
+            delete dataToSave._id;
+        }
+        axiosConfig.post(`devices/${postUrl}`, dataToSave)
+        .then(res => {
+            backToMain()
+         })
+         .catch(e => {
+            alert(e)
+         })
+    }
     
-    return <form>
+    return <form onSubmit={saveForm}>
         <label>Nazwa urządzenia (max 15 znaków)</label>
         <input 
             type="text" 
@@ -74,7 +93,7 @@ const DeviceForm = ({deviceData}) => {
 
         <div className="flex">
             <button className="btn btn-danger" onClick={backToMain}>Cofnij</button>
-            <button className="btn btn-success" onClick={()=>console.log(device)}>Zatwierdź</button>
+            <button className="btn btn-success" type="submit">Zatwierdź</button>
         </div>
     </form>
 };

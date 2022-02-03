@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import LastUpdate from '../components/lastUpdate';
+import { Link } from 'react-router-dom';
 
 const ItemTemperature = ({device}) => {
     const [lastUpdate, setLastUpdate] = useState(new Date().toLocaleString());
@@ -17,7 +18,7 @@ const ItemTemperature = ({device}) => {
     }, [])
 
     const getDeviceDetails = () => {
-        axios.get('https://menagemyhome.sukces24.usermd.net/proxy/proxy.php?apiUrl='+device.apiUrl)
+        axios.get('https://sukces24.usermd.net/proxy/proxy.php?apiUrl='+device.apiUrl)
         .then(res => {
             setDeviceInfo(res.data)
             setLastUpdate(new Date().toLocaleString())
@@ -44,14 +45,14 @@ const ItemTemperature = ({device}) => {
                 <span className="device-stats">{deviceInfo.temperature.toFixed(2)}°C</span>
             </div>
             <div>
-                <div className="icon-border">
-                    <a href="device.html">
+                <Link to={`/edit/${device._id}`}>
+                    <div className="icon-border">
                         <img
                             src={require("../assets/img/edit.svg").default}                         
                             alt="" 
                             className="icon" />
-                    </a> 
-                </div>
+                    </div>
+                </Link>
             </div>
         </div>
         <LastUpdate lastUpdateDate={lastUpdate} />

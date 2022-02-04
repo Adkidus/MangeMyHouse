@@ -24,6 +24,18 @@ const DeviceForm = ({deviceData}) => {
         setDevice({...device,...{'phones': phones}});
     }
 
+    const addPhone = () => {
+        let phones = [...device.phones];
+        phones.push('');
+        setDevice({...device,...{'phones': phones}});
+    }
+
+    const deletePhone = i => {
+        let phones = [...device.phones];
+        phones.splice(i, 1);
+        setDevice({...device,...{'phones': phones}});
+    }
+
     const backToMain = () => {
         navigate("/", { replace: true });
     }
@@ -50,7 +62,7 @@ const DeviceForm = ({deviceData}) => {
          })
     }
     
-    return <form onSubmit={saveForm}>
+    return <form className="content" onSubmit={saveForm}>
         <label>Nazwa urządzenia (max 15 znaków)</label>
         <input 
             type="text" 
@@ -84,15 +96,37 @@ const DeviceForm = ({deviceData}) => {
         
         <label>Numery na jakie zostanie wysłany SMS</label>
         {device.phones.map((phone,index) => <div key={index}>
-            <input 
-                type="tel" 
-                placeholder="np. 534735670"
-                value={phone}
-                onChange={e=>handlePhone(index,e.target.value)} />
+                <div className="flex">
+                    <input 
+                        type="tel" 
+                        placeholder="np. 534735670"
+                        style={{flex: 1}}
+                        value={phone}
+                        onChange={e=>handlePhone(index,e.target.value)} />
+                    <button 
+                        type="button" 
+                        className="btn btn-danger" 
+                        style={{flex:'0 1 64px'}}
+                        onClick={()=>deletePhone(index)}    
+                    >x</button>
+                </div>
         </div>)}
+        <button type="button" className="btn btn-small btn-info" onClick={addPhone}>Dodaj nowy numer</button>
+
+        <label>Wybierz typ urządzenia</label>
+        <select 
+            id="types" 
+            name="types" 
+            value={device.type}
+            onChange={e=>handleChange('type',Number(e.target.value))}
+        >
+            <option value="1">Procent</option>
+            <option value="2">Temperatura</option>
+            <option value="3">On/Off</option>
+        </select>
 
         <div className="flex">
-            <button className="btn btn-danger" onClick={backToMain}>Cofnij</button>
+            <button type="button" className="btn btn-danger" onClick={backToMain}>Cofnij</button>
             <button className="btn btn-success" type="submit">Zatwierdź</button>
         </div>
     </form>

@@ -22,21 +22,23 @@ const Devices = () => {
                 <h1>Twoje urządzenia</h1> 
                 {/* <span className="refresh">Odśwież Listę</span> */}
             </div>
-            {devicesList.map((device,index) => {
-                switch (device.type) {
-                    case 1:
-                        return <ItemPercent key={index} device={device} />
-                    case 2:
-                        return <ItemTemperature key={index} device={device} />
-                    case 3:
-                        return <ItemStatus key={index} device={device} />
-                    default:
-                        return <div key={index}>BRAK DANYCH {device.name}</div>
-                }
-            })}
-            <Link to='/new'>
-                <button className='btn btn-success btn-block w-100'>Dodaj nowe urządzenie</button>
-            </Link>
+            <div className="content">
+                {devicesList.map((device,index) => {
+                    switch (device.type) {
+                        case 1:
+                            return <ItemPercent key={index} device={device} />
+                        case 2:
+                            return <ItemTemperature key={index} device={device} />
+                        case 3:
+                            return <ItemStatus key={index} device={device} />
+                        default:
+                            return <div key={index}>BRAK DANYCH {device.name}</div>
+                    }
+                })}
+                <Link to='/new'>
+                    <button className='btn btn-success btn-block w-100'>Dodaj nowe urządzenie</button>
+                </Link>
+            </div>
         </div>
         </section>
         }

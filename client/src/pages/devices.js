@@ -40,7 +40,7 @@ const Devices = () => {
                 </Link>
             </div>
         </div>
-        </section>
-        }
+    </section>
+    }
 
 export default Devices;

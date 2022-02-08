@@ -13,6 +13,7 @@ const DeviceSchema = new Schema({
     meesageSwitchOn: String,
     meesageSwitchOff: String,
     phones: [String],
+    mails: [String],
     type: Number
 }, {
     timestamps: true

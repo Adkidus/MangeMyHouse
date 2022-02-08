@@ -11,6 +11,7 @@ const DeviceForm = ({deviceData}) => {
         meesageSwitchOn: '',
         meesageSwitchOff: '',
         phones: [''],
+        mails: [''],
         type: 1,
     })
 
@@ -34,6 +35,24 @@ const DeviceForm = ({deviceData}) => {
         let phones = [...device.phones];
         phones.splice(i, 1);
         setDevice({...device,...{'phones': phones}});
+    }
+
+    const handleMail = (i,v) => {
+        let mails = [...device.mails];
+        mails[i] = v;
+        setDevice({...device,...{'mails': mails}});
+    }
+
+    const addMail = () => {
+        let mails = [...device.mails];
+        mails.push('');
+        setDevice({...device,...{'mails': mails}});
+    }
+
+    const deleteMail = i => {
+        let mails = [...device.mails];
+        mails.splice(i, 1);
+        setDevice({...device,...{'mails': mails}});
     }
 
     const backToMain = () => {
@@ -112,6 +131,25 @@ const DeviceForm = ({deviceData}) => {
                 </div>
         </div>)}
         <button type="button" className="btn btn-small btn-info" onClick={addPhone}>Dodaj nowy numer</button>
+
+        <label for="mail">Wyślij powiadomienie na adres email:</label>
+        {device.mails.map((mail,index) => <div key={index}>
+                <div className="flex">
+                    <input 
+                        type="email" 
+                        placeholder="np. jan.kowalski@gmail.com"
+                        style={{flex: 1}}
+                        value={mail}
+                        onChange={e=>handleMail(index,e.target.value)} />
+                    <button 
+                        type="button" 
+                        className="btn btn-danger" 
+                        style={{flex:'0 1 64px'}}
+                        onClick={()=>deleteMail(index)}    
+                    >x</button>
+                </div>
+        </div>)}
+        <button type="button" className="btn btn-small btn-info" onClick={addMail}>Dodaj adres email</button>
 
         <label>Wybierz typ urządzenia</label>
         <select 
